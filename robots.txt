@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dom-almiri.github.io/sitemap.xml
