@@ -541,6 +541,112 @@
                 flex-direction:column;
             }
 
+            nav{
+                gap:18px;
+                flex-wrap:wrap;
+                justify-content:center;
+            }
+
+            .phone-btn{
+                width:100%;
+                max-width:320px;
+                justify-content:center;
+            }
+
+            .hero-image{
+                margin-top:170px;
+                height:45vh;
+                min-height:320px;
+
+                background-position:center center;
+                background-size:cover;
+            }
+
+            .hero-content{
+                margin-top:-40px;
+            }
+
+            .hero-box{
+                padding:40px 18px 24px;
+
+                border-radius:32px 32px 0 0;
+            }
+
+            .hero-tag{
+                font-size:.75rem;
+                letter-spacing:4px;
+                line-height:1.6;
+            }
+
+            .hero-title{
+                font-size:clamp(38px, 11vw, 62px);
+                line-height:.95;
+
+                max-width:100%;
+            }
+
+            .hero-divider{
+                width:170px;
+                margin:22px auto;
+            }
+
+            .hero-text{
+                font-size:1rem;
+                line-height:1.7;
+            }
+
+            .hero-buttons{
+                flex-direction:column;
+                align-items:center;
+            }
+
+            .wa-link,
+            .outline-btn{
+                width:100%;
+                max-width:320px;
+                text-align:center;
+            }
+
+            .house,
+            .house.reverse{
+                grid-template-columns:1fr;
+
+                padding:20px;
+            }
+
+            .house-gallery{
+                grid-template-columns:1fr;
+            }
+
+            .house-gallery img{
+                width:100%;
+                height:auto !important;
+                max-height:none !important;
+                object-fit:cover;
+            }
+
+            .house-info h3{
+                font-size:2.3rem;
+            }
+
+            .features{
+                grid-template-columns:1fr;
+            }
+
+            .section{
+                padding:70px 0;
+            }
+
+            .section-head{
+                margin-bottom:40px;
+            }
+
+            .section-head h2{
+                font-size:2.6rem;
+            }
+
+        }
+
             .hero-image{
                 margin-top:150px;
                 height:58vh;
@@ -578,69 +684,7 @@
             }
 
         }
-        @media (max-width: 768px){
 
-      .header-inner{
-        flex-direction:column;
-        gap:20px;
-        padding:20px;
-      }
-
-       .nav{
-        gap:18px;
-        flex-wrap:wrap;
-        justify-content:center;
-      }
-
-       .hero-image{
-        margin-top:96px;
-        width:100%;
-        min-height:650px;
-    
-        background:
-        linear-gradient(
-            rgba(5,18,22,.18),
-            rgba(5,18,22,.18)
-        ),
-        url('hero-image.jpg');
-        background-position:center;
-        background-size:cover;
-        background-repeat:no-repeat;
-
-        position:relative;
-        overflow:hidden;
-       }
-
-       .hero-title{
-        font-size:clamp(42px, 10vw, 72px);
-        line-height:1;
-        padding:0 20px;
-       }
-
-       .hero-subtitle{
-        font-size:clamp(24px, 7vw, 48px);
-        padding:0 20px;
-       }
-
-       .hero-location{
-        font-size:18px;
-        padding:0 20px;
-       }
-
-       .hero-logo{
-        width:220px;
-       }
-
-       .hero-box{
-        padding:50px 20px 30px;
-       }
-
-       .phone-btn{
-        width:100%;
-        max-width:320px;
-        text-align:center;
-       }
-     }
     </style>
 </head>
 <body>
@@ -942,6 +986,6 @@
     </p>
 
 </footer>
-    
+
 </body>
 </html>
