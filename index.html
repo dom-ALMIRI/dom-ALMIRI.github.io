@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>ALMIRI — Премиальный отдых у моря</title>
+
+    <meta name="description"
+          content="ALMIRI — премиальный отдых у Азовского моря в Ейске. Семейные дома и уютные апартаменты на первой береговой линии.">
+
+    <link rel="icon" href="favicon.ico">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root{
+            --dark:#08171a;
+            --dark-soft:#102429;
+            --gold:#b99658;
+            --gold-soft:#d7b97d;
+            --bg:#f7f4ef;
+            --text:#17242a;
+            --soft:#60727b;
+            --green:#0d7c69;
+            --shadow:0 15px 40px rgba(0,0,0,.08);
+        }
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        html{
+            scroll-behavior:smooth;
+        }
+
+        body{
+            background:var(--bg);
+            color:var(--text);
+            font-family:'Inter',sans-serif;
+            overflow-x:hidden;
+        }
+
+        img{
+            width:100%;
+            height:auto;
+            display:block;
+        }
+
+        a{
+            text-decoration:none;
+        }
+
+        .container{
+            width:min(1400px,92%);
+            margin:auto;
+        }
+
+        /* HEADER */
+        header{
+            position:fixed;
+            top:0;
+            left:0;
+            width:100%;
+            z-index:1000;
+            background:rgba(5,18,22,.80);
+            backdrop-filter:blur(14px);
+            border-bottom:1px solid rgba(255,255,255,.06);
+        }
+
+        .header-inner{
+            height:96px;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+        }
+
+        .logo img{
+            width:110px;
+            border-radius:8px;
+        }
+
+        nav{
+            display:flex;
+            gap:42px;
+        }
+
+        nav a{
+            color:white;
+            font-size:.95rem;
+            font-weight:500;
+            transition:.3s;
+        }
+
+        nav a:hover{
+            color:var(--gold-soft);
+        }
+
+        .phone-btn{
+            display:inline-flex;
+            align-items:center;
+            justify-content:center;
+            background:#075d5f;
+            color:white;
+            padding:12px 24px;
+            border-radius:60px;
+            font-weight:700;
+            font-size: 0.95rem;
+            transition:.3s ease;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .phone-btn:hover{
+            background:#0b7779;
+        }
+
+        /* NEW HERO SECTION */
+        .hero{
+            margin-top: 96px;
+            position: relative;
+            min-height: 75vh;
+            background: 
+                linear-gradient(to bottom, rgba(5,18,22,0.4) 0%, rgba(5,18,22,0.2) 60%, var(--bg) 95%),
+                url('hero-image.jpg') center center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 80px 20px 140px;
+            color: white;
+        }
+
+        .hero-banner-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(38px, 6vw, 85px);
+            font-weight: 500;
+            line-height: 1.1;
+            max-width: 1100px;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 15px rgba(0,0,0,0.4);
+        }
+
+        .hero-banner-title em {
+            font-style: normal;
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--gold-soft);
+        }
+
+        .hero-geo {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: clamp(14px, 1.5vw, 18px);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 600;
+            margin-bottom: 40px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+
+        .hero-geo span {
+            color: var(--gold-soft);
+        }
+
+        /* HERO CONTENT OVERLAY CARD */
+        .hero-content {
+            width: 100%;
+            max-width: 1100px;
+            margin: -80px auto 0;
+            position: relative;
+            z-index: 5;
+            padding: 0 4%;
+        }
+
+        .hero-box {
+            background: var(--bg);
+            border-radius: 30px;
+            padding: 50px 40px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .hero-tag {
+            color: var(--gold);
+            letter-spacing: 4px;
+            font-size: .9rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .hero-divider {
+            margin: 20px auto;
+            width: 100px;
+            opacity: .8;
+        }
+
+        .hero-text {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--soft);
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .hero-buttons {
+            margin-top: 35px;
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .wa-link {
+            display: inline-block;
+            background: linear-gradient(135deg,#0e8f74,#0b6f6b);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 60px;
+            font-weight: 700;
+            transition: .3s ease;
+        }
+
+        .wa-link:hover {
+            transform: translateY(-2px);
+        }
+
+        .outline-btn {
+            display: inline-block;
+            padding: 16px 32px;
+            border-radius: 60px;
+            border: 1.5px solid rgba(185,150,88,.55);
+            color: #1d2b30;
+            font-weight: 600;
+            background: white;
+            transition: .3s;
+        }
+
+        .outline-btn:hover {
+            background: #f8f1e4;
+        }
+
+        /* SECTIONS */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-head {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-head span {
+            color: var(--gold);
+            letter-spacing: 3px;
+            font-size: .85rem;
+            font-weight: 700;
+        }
+
+        .section-head h2 {
+            margin-top: 12px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            color: #10242a;
+            font-weight: 600;
+        }
+
+        /* HOUSES СЕТКА */
+        .house {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            background: white;
+            border-radius: 28px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            margin-bottom: 50px;
+        }
+
+        .house.reverse {
+            grid-template-columns: 1fr 1.1fr;
+        }
+
+        .house-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .house-gallery img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            border-radius: 16px;
+            background: #f1f1f1;
+        }
+
+        .house-info .mini {
+            color: var(--gold);
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            font-size: 0.85rem;
+        }
+
+        .house-info h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.8rem, 3vw, 2.8rem);
+            line-height: 1.1;
+            margin-bottom: 16px;
+            color: #10242a;
+        }
+
+        .house-info p {
+            color: var(--soft);
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+
+        .feature {
+            background: #edf6f4;
+            border-radius: 12px;
+            padding: 12px;
+            color: #0f3a42;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .price-box {
+            background: linear-gradient(135deg, #082126, #0d3940);
+            border-radius: 20px;
+            padding: 24px;
+            color: white;
+        }
+
+        .price-box span {
+            display: block;
+            opacity: .65;
+            letter-spacing: 2px;
+            font-size: .75rem;
+            margin-bottom: 8px;
+        }
+
+        .price-box h4 {
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+
+        .price-box .wa-link {
+            display: block;
+            text-align: center;
+        }
+
+        /* REVIEWS */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .review {
+            background: white;
+            border-radius: 24px;
+            padding: 26px;
+            box-shadow: var(--shadow);
+        }
+
+        .review h4 {
+            margin-bottom: 12px;
+            color: #10242a;
+        }
+
+        .review p {
+            color: var(--soft);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #081518;
+            color: white;
+            text-align: center;
+            padding: 50px 20px 30px;
+        }
+
+        footer p {
+            opacity: .75;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+
+        .footer-line {
+            width: 60px;
+            height: 2px;
+            background: var(--gold);
+            margin: 20px auto;
+        }
+
+        /* АДАПТИВНОСТЬ ДЛЯ ПЛАНШЕТОВ И МОБИЛЬНЫХ */
+        @media (max-width: 1024px) {
+            nav {
+                display: none;
+            }
+            .house, .house.reverse {
+                grid-template-columns: 1fr;
+                gap: 24px;
+                padding: 20px;
+            }
+            .house.reverse .house-gallery {
+                order: -1; /* Картинки всегда сверху текста */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-inner {
+                height: 76px;
+            }
+            .logo img {
+                width: 90px;
+            }
+            .phone-btn {
+                padding: 10px 16px;
+                font-size: 0.8rem;
+            }
+            .hero {
+                margin-top: 76px;
+                min-height: auto;
+                padding: 50px 15px 100px;
+            }
+            .hero-content {
+                margin-top: -60px;
+            }
+            .hero-box {
+                padding: 30px 16px;
+                border-radius: 20px;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .wa-link, .outline-btn {
+                width: 100%;
+                text-align: center;
+                padding: 14px 20px;
+            }
+            .features {
+                grid-template-columns: 1fr;
+            }
+            .section {
+                padding: 40px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <a href="#" class="logo">
+            <img src="logo.png" alt="ALMIRI">
+        </a>
+        <nav>
+            <a href="#houses">Дома</a>
+            <a href="#reviews">Отзывы</a>
+            <a href="#contacts">Контакты</a>
+        </nav>
+        <a href="tel:+79184588523" class="phone-btn">
+            +7 (918) 458-85-23
+        </a>
+    </div>
+</header>
+
+<section class="hero">
+    <h1 class="hero-banner-title">
+        Премиальный отдых <br><em>у Азовского моря</em>
+    </h1>
+    <div class="hero-geo">
+        <span>📍</span> Первая береговая линия • Ейск
+    </div>
+</section>
+
+<div class="hero-content">
+    <div class="container">
+        <div class="hero-box">
+            <div class="hero-tag">ALMIRI GUEST HOUSE</div>
+            <p class="hero-text">
+                Современные дома у Азовского моря с атмосферой уюта, тишины и комфортного семейного отдыха на первой береговой линии.
+            </p>
+            <div class="hero-buttons">
+                <a href="https://wa.me/79184588523" class="wa-link">
+                    Забронировать в WhatsApp
+                </a>
+                <a href="#houses" class="outline-btn">
+                    Смотреть дома
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="section" id="houses">
+    <div class="container">
+        <div class="section-head">
+            <span>ФОРМАТЫ ОТДЫХА</span>
+            <h2>Выберите свой дом</h2>
+        </div>
+
+        <div class="house">
+            <div class="house-gallery">
+                <img src="vista.jpg" alt="">
+                <img src="IMG_6688.jpg" alt="">
+                <img src="IMG_6687.jpg" alt="">
+                <img src="IMG_6683.jpg" alt="">
+                <img src="IMG_6686.jpg" alt="">
+                <img src="IMG_6684.jpg" alt="">
+                <img src="IMG_6682.jpg" alt="">
+                <img src="IMG_6685.jpg" alt="">
+            </div>
+            <div class="house-info">
+                <div class="mini">ДОМ №1 · ДО 6 ГОСТЕЙ</div>
+                <h3>Просторный дом для семьи</h3>
+                <p>Просторный дом рядом с морем для семейного отдыха и компании друзей. Уютная атмосфера, современный интерьер, парковка и комфортная территория.</p>
+                <div class="features">
+                    <div class="feature">До 6 гостей</div>
+                    <div class="feature">1-я береговая линия</div>
+                    <div class="feature">Wi-Fi & Кондиционер</div>
+                    <div class="feature">Собственная парковка</div>
+                </div>
+                <div class="price-box">
+                    <span>СТОИМОСТЬ</span>
+                    <h4>4000 – 6000 ₽</h4>
+                    <a href="https://wa.me/79184588523" class="wa-link">Уточнить даты</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="house reverse">
+            <div class="house-gallery">
+                <img src="Терасса 5.jpg" alt="">
+                <img src="Терасса 4.jpg" alt="">
+                <img src="Гостинная 1.jpg" alt="">
+                <img src="Кухня 1.jpg" alt="">
+                <img src="Кухня 2.jpg" alt="">
+                <img src="Кухня 3.jpg" alt="">
+                <img src="Кухня 4.jpg" alt="">
+                <img src="Ванная 5.jpg" alt="">
+                <img src="Ванная 4.jpg" alt="">
+                <img src="Ванная 2.jpg" alt="">
+            </div>
+            <div class="house-info">
+                <div class="mini">ДОМ №2 · ДО 2 ГОСТЕЙ</div>
+                <h3>Уютные апартаменты для пары</h3>
+                <p>Атмосферный компактный дом для спокойного отдыха вдвоем. Идеально подойдет для пары, которая хочет тишины, моря и красивых закатов.</p>
+                <div class="features">
+                    <div class="feature">До 2 гостей</div>
+                    <div class="feature">Тихая территория</div>
+                    <div class="feature">Рядом пляж</div>
+                    <div class="feature">Новый интерьер</div>
+                </div>
+                <div class="price-box">
+                    <span>СТОИМОСТЬ</span>
+                    <h4>3500 – 5500 ₽</h4>
+                    <a href="https://wa.me/79184588523" class="wa-link">Забронировать</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="reviews">
+    <div class="container">
+        <div class="section-head">
+            <span>ОТЗЫВЫ ГОСТЕЙ</span>
+            <h2>Люди возвращаются снова</h2>
+        </div>
+        <div class="reviews-grid">
+            <div class="review">
+                <h4>Анна · Ростов-на-Дону</h4>
+                <p>Очень красивое и спокойное место. Всё выглядит дорого и аккуратно, до моря действительно несколько минут.</p>
+            </div>
+            <div class="review">
+                <h4>Ирина · Москва</h4>
+                <p>Идеально для семейного отдыха. Понравилась атмосфера, чистота, интерьер и отношение хозяев.</p>
+            </div>
+            <div class="review">
+                <h4>Кирилл · Краснодар</h4>
+                <p>Отличный современный дом, удобная парковка и очень уютная территория для вечернего отдыха.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer id="contacts">
+    <p>Краснодарский край, г. Ейск, Морская улица, 236</p>
+    <p>Прием звонков: 09:00 – 19:00</p>
+    <div class="footer-line"></div>
+    <p style="font-size:.82rem;opacity:.45;">© 2026 ALMIRI GUEST HOUSE</p>
+</footer>
+
+</body>
+</html>
