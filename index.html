@@ -578,7 +578,69 @@
             }
 
         }
+        @media (max-width: 768px){
 
+      .header-inner{
+        flex-direction:column;
+        gap:20px;
+        padding:20px;
+      }
+
+       .nav{
+        gap:18px;
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+       .hero-image{
+        margin-top:96px;
+        width:100%;
+        min-height:650px;
+    
+        background:
+        linear-gradient(
+            rgba(5,18,22,.18),
+            rgba(5,18,22,.18)
+        ),
+        url('hero-image.jpg');
+        background-position:center;
+        background-size:cover;
+        background-repeat:no-repeat;
+
+        position:relative;
+        overflow:hidden;
+       }
+
+       .hero-title{
+        font-size:clamp(42px, 10vw, 72px);
+        line-height:1;
+        padding:0 20px;
+       }
+
+       .hero-subtitle{
+        font-size:clamp(24px, 7vw, 48px);
+        padding:0 20px;
+       }
+
+       .hero-location{
+        font-size:18px;
+        padding:0 20px;
+       }
+
+       .hero-logo{
+        width:220px;
+       }
+
+       .hero-box{
+        padding:50px 20px 30px;
+       }
+
+       .phone-btn{
+        width:100%;
+        max-width:320px;
+        text-align:center;
+       }
+     }
     </style>
 </head>
 <body>
@@ -880,55 +942,6 @@
     </p>
 
 </footer>
-@media (max-width: 768px){
-
-    .header-container{
-        flex-direction:column;
-        gap:20px;
-        padding:20px;
-    }
-
-    .nav{
-        gap:18px;
-        flex-wrap:wrap;
-        justify-content:center;
-    }
-
-    .hero-image{
-        min-height:500px;
-        background-position:center center;
-        background-size:cover;
-    }
-
-    .hero-title{
-        font-size:clamp(42px, 10vw, 72px);
-        line-height:1;
-        padding:0 20px;
-    }
-
-    .hero-subtitle{
-        font-size:clamp(24px, 7vw, 48px);
-        padding:0 20px;
-    }
-
-    .hero-location{
-        font-size:18px;
-        padding:0 20px;
-    }
-
-    .hero-logo{
-        width:220px;
-    }
-
-    .hero-box{
-        padding:50px 20px 30px;
-    }
-
-    .phone-btn{
-        width:100%;
-        max-width:320px;
-        text-align:center;
-    }
-}
+    
 </body>
 </html>
