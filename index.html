@@ -130,7 +130,7 @@
             align-items: center;
             text-align: center;
             padding: 80px 20px 140px;
-            color: var(--gold-soft);
+            color: white;
         }
 
         .hero-banner-title {
@@ -296,7 +296,13 @@
             object-fit: cover;
             border-radius: 16px;
             background: #f1f1f1;
+            cursor: pointer;
+            transition: .3s;
         }
+
+        .house-gallery img:hover {
+            transform: scale(1.03);
+        } 
 
         .house-info .mini {
             color: var(--gold);
@@ -552,15 +558,15 @@
                 <img src="Терасса 4.jpg" alt="">
                 <img src="Гостинная 1.jpg" alt="">
                 <img src="Кухня 1.jpg" alt="">
-                <img src="Кухня 2.jpg" alt="">
+                <img src="Стол.jpg" alt="">
                 <img src="Кухня 3.jpg" alt="">
-                <img src="Кухня 4.jpg" alt="">
+                <img src="Диван.jpg" alt="">
                 <img src="Ванная 5.jpg" alt="">
                 <img src="Ванная 4.jpg" alt="">
                 <img src="Ванная 2.jpg" alt="">
             </div>
             <div class="house-info">
-                <div class="mini">ДОМ №2 · ДО 2 ГОСТЕЙ</div>
+                <div class="mini">ДОМ №2 · ДО 4 ГОСТЕЙ</div>
                 <h3>Уютные апартаменты для пары</h3>
                 <p>Атмосферный компактный дом для спокойного отдыха вдвоем. Идеально подойдет для пары, которая хочет тишины, моря и красивых закатов.</p>
                 <div class="features">
@@ -608,6 +614,67 @@
     <div class="footer-line"></div>
     <p style="font-size:.82rem;opacity:.45;">© 2026 ALMIRI GUEST HOUSE</p>
 </footer>
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+    <span class="lightbox-close" id="lightboxClose">&times;</span>
+    <img id="lightboxImg" src="" alt="">
+</div>
 
+<style>
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.92);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+    padding: 30px;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 95%;
+    max-height: 90vh;
+    border-radius: 18px;
+    object-fit: contain;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    font-size: 42px;
+    color: white;
+    cursor: pointer;
+}
+</style>
+
+<script>
+const galleryImages = document.querySelectorAll('.house-gallery img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxClose = document.getElementById('lightboxClose');
+
+galleryImages.forEach(img => {
+    img.addEventListener('click', () => {
+        lightbox.classList.add('active');
+        lightboxImg.src = img.src;
+    });
+});
+
+lightboxClose.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+});
+
+lightbox.addEventListener('click', (e) => {
+    if (e.target !== lightboxImg) {
+        lightbox.classList.remove('active');
+    }
+});
+</script>
 </body>
 </html>
